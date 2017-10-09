@@ -17,9 +17,10 @@ function parse_url(url){
 			if(!vars[i]) continue;
 			n_v=vars[i].split('=');
 			if(n_v.length>2) return false;
-			query[n_v[0]]=n_v[1];
+			query[n_v[0]]=decodeURIComponent(n_v[1]);
 		}
 	}
 	parts.query=query;
 	return parts
 }
+
